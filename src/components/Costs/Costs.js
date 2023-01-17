@@ -7,29 +7,34 @@ import Card from '../UI/Card';
 import './Costs.css';
 
 const Costs = (props) => {
-  const [selectedYear, setSelectedYear] = useState('2020');
+  const [selectedYear, setSelectedYear] = useState(
+    new Date().getFullYear().toString()
+  );
+
   const yearChangeHandler = (year) => {
-    console.log('Costs Component', year);
     setSelectedYear(year);
   };
+
+  const filteredCosts = props.costs.filter(
+    (cost) => cost.date.getFullYear().toString() === selectedYear
+  );
+
+  let costsContent = <p>You didn't buy anything</p>;
+
+  if (filteredCosts > 0) {
+    costsContent = filteredCosts.map((cost) => (
+      <CostItem
+        key={cost.id}
+        date={cost.date}
+        description={cost.description}
+        amount={cost.amount}
+      />
+    ));
+  }
   return (
     <Card className="costs">
       <CostsFilter onChangeYear={yearChangeHandler} year={selectedYear} />
-      <CostItem
-        date={props.costs[0].date}
-        description={props.costs[0].description}
-        amount={props.costs[0].amount}
-      />
-      <CostItem
-        date={props.costs[1].date}
-        description={props.costs[1].description}
-        amount={props.costs[1].amount}
-      />
-      <CostItem
-        date={props.costs[2].date}
-        description={props.costs[2].description}
-        amount={props.costs[2].amount}
-      />
+      {costsContent}
     </Card>
   );
 };

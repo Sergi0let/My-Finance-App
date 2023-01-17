@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-
+import { useState } from 'react';
 import Costs from './components/Costs/Costs';
 import NewCost from './components/NewCost/NewCost';
 
 const App = () => {
-  const costs = [
+  const INITIAL_COSTS = [
     {
       id: 'c1',
       date: new Date(2021, 2, 12),
@@ -13,29 +12,25 @@ const App = () => {
     },
     {
       id: 'c2',
-      date: new Date(2021, 11, 25),
+      date: new Date(2023, 11, 25),
       description: 'MacBook',
       amount: '1254.73',
     },
     {
       id: 'c3',
-      date: new Date(2021, 4, 1),
+      date: new Date(2023, 4, 1),
       description: 'Jeans',
       amount: '49.99',
     },
   ];
 
-  // const [yearFilter, setYearFilter] = useState('2023');
+  const [costs, setCosts] = useState(INITIAL_COSTS);
 
   const addCostHandler = (cost) => {
     console.log(cost);
     console.log('app component');
+    setCosts(() => [cost, ...costs]);
   };
-
-  // const addYearHandler = (year) => {
-  //   setYearFilter(year);
-  //   console.log(yearFilter);
-  // };
 
   return (
     <div>
