@@ -21,7 +21,7 @@ const Costs = (props) => {
 
   let costsContent = <p>You didn't buy anything</p>;
 
-  if (filteredCosts > 0) {
+  if (filteredCosts.length > 0) {
     costsContent = filteredCosts.map((cost) => (
       <CostItem
         key={cost.id}
