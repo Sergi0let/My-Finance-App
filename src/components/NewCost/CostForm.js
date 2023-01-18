@@ -23,8 +23,8 @@ const CostForm = (props) => {
       setDescription('');
       setAmount('');
       setDate('');
+      props.onClose();
     }
-    return;
   };
 
   return (
@@ -56,6 +56,9 @@ const CostForm = (props) => {
         </div>
         <div className="new-cost__actions">
           <button type="submit">Add Costs</button>
+          <button type="submit" onClick={props.onClose}>
+            Close Costs
+          </button>
         </div>
       </div>
     </form>
