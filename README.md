@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-# My Finance Notebook App <img alt="logo" src="https://pin.it/3RASWky" />
+# My Finance Notebook App <img alt="logo" src="https://i.pinimg.com/564x/59/9b/f4/599bf4410d012a9d0f136494a2f96c38.jpg" />
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
