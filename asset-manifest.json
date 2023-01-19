@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/my-finance-app/static/css/main.1f7f710a.css",
-    "main.js": "/my-finance-app/static/js/main.3eb9da14.js",
-    "static/media/banknotes.jpg": "/my-finance-app/static/media/banknotes.52e9da5c4ecd3fc59f72.jpg",
-    "static/media/dollar-banknotes-background.jpg": "/my-finance-app/static/media/dollar-banknotes-background.b5033d35099ae0cdfb12.jpg",
-    "index.html": "/my-finance-app/index.html",
-    "main.1f7f710a.css.map": "/my-finance-app/static/css/main.1f7f710a.css.map",
-    "main.3eb9da14.js.map": "/my-finance-app/static/js/main.3eb9da14.js.map"
+    "main.css": "/My-Finance-App/static/css/main.1f7f710a.css",
+    "main.js": "/My-Finance-App/static/js/main.a3943d88.js",
+    "static/media/banknotes.jpg": "/My-Finance-App/static/media/banknotes.52e9da5c4ecd3fc59f72.jpg",
+    "static/media/dollar-banknotes-background.jpg": "/My-Finance-App/static/media/dollar-banknotes-background.b5033d35099ae0cdfb12.jpg",
+    "index.html": "/My-Finance-App/index.html",
+    "main.1f7f710a.css.map": "/My-Finance-App/static/css/main.1f7f710a.css.map",
+    "main.a3943d88.js.map": "/My-Finance-App/static/js/main.a3943d88.js.map"
   },
   "entrypoints": [
     "static/css/main.1f7f710a.css",
-    "static/js/main.3eb9da14.js"
+    "static/js/main.a3943d88.js"
   ]
 }
