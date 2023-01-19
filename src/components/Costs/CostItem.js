@@ -16,7 +16,7 @@ const CostItemLi = styled.li`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    align-items: flex-end;
+    align-items: center;
     flex-flow: column-reverse;
     justify-content: flex-start;
     flex: 1;
@@ -40,7 +40,7 @@ const CostItemLi = styled.li`
     border-radius: 12px;
   }
 
-  @media (min-width: 580px) {
+  @media (min-width: 480px) {
     section {
       flex-direction: row;
       align-items: center;
@@ -50,6 +50,7 @@ const CostItemLi = styled.li`
 
     h2 {
       font-size: 1.25rem;
+      white-space: wrap;
     }
 
     p {
