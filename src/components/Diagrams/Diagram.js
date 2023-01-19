@@ -4,7 +4,8 @@ import DiagramBar from './DiagramBar';
 const DiagramBlock = styled.article`
   padding: 1rem;
   border-radius: 12px;
-  background-color: #d8f3f9;
+  background-color: rgba(255, 255, 255, 0.8);
+
   text-align: center;
   display: flex;
   justify-content: space-around;

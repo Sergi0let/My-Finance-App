@@ -42,11 +42,11 @@ const CostForm = ({ onSaveCostData, onClose }) => {
   return (
     <form onSubmit={submitHandler}>
       <Controls>
-        <InputBlock>
+        <InputBlock isInputValid>
           <label>Name</label>
           <input type="text" onChange={nameChangeHandler} value={description} />
         </InputBlock>
-        <InputBlock>
+        <InputBlock isInputValid>
           <label>Amount</label>
           <input
             type="number"
@@ -56,7 +56,7 @@ const CostForm = ({ onSaveCostData, onClose }) => {
             value={amount}
           />
         </InputBlock>
-        <InputBlock>
+        <InputBlock isInputValid>
           <label>Date</label>
           <input
             type="date"

@@ -10,6 +10,9 @@ const CostsFilterBlock = styled.article`
     align-items: center;
     justify-content: space-between;
     margin: 1rem 0;
+    @media (max-width: 400px) {
+      flex-direction: column;
+    }
   }
 
   label {
@@ -22,6 +25,7 @@ const CostsFilterBlock = styled.article`
     padding: 0.5rem 3rem;
     font-weight: bold;
     border-radius: 6px;
+    color: tomato;
   }
 `;
 
