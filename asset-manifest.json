@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/my-finance-app/static/css/main.1f7f710a.css",
-    "main.js": "/my-finance-app/static/js/main.3eb9da14.js",
+    "main.js": "/my-finance-app/static/js/main.8ba7e71e.js",
     "static/media/banknotes.jpg": "/my-finance-app/static/media/banknotes.52e9da5c4ecd3fc59f72.jpg",
     "static/media/dollar-banknotes-background.jpg": "/my-finance-app/static/media/dollar-banknotes-background.b5033d35099ae0cdfb12.jpg",
     "index.html": "/my-finance-app/index.html",
     "main.1f7f710a.css.map": "/my-finance-app/static/css/main.1f7f710a.css.map",
-    "main.3eb9da14.js.map": "/my-finance-app/static/js/main.3eb9da14.js.map"
+    "main.8ba7e71e.js.map": "/my-finance-app/static/js/main.8ba7e71e.js.map"
   },
   "entrypoints": [
     "static/css/main.1f7f710a.css",
-    "static/js/main.3eb9da14.js"
+    "static/js/main.8ba7e71e.js"
   ]
 }
