@@ -1,16 +1,23 @@
+import styled from 'styled-components';
 import DiagramBar from './DiagramBar';
 
-import './Diagram.css';
+const DiagramBlock = styled.article`
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #d8f3f9;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  height: 10rem;
+`;
 
-import React from 'react';
-
-const Diagram = (props) => {
-  const dataSetsValue = props.dataSets.map((cost) => cost.value);
+const Diagram = ({ dataSets }) => {
+  const dataSetsValue = dataSets.map((cost) => cost.value);
   const maxMonthCosts = Math.max(...dataSetsValue);
 
   return (
-    <div className="diagram">
-      {props.dataSets.map((dataSet) => (
+    <DiagramBlock>
+      {dataSets.map((dataSet) => (
         <DiagramBar
           key={dataSet.label}
           value={dataSet.value}
@@ -18,7 +25,7 @@ const Diagram = (props) => {
           label={dataSet.label}
         />
       ))}
-    </div>
+    </DiagramBlock>
   );
 };
 

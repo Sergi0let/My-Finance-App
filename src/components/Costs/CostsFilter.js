@@ -1,23 +1,46 @@
-import './CostsFilter.css';
+import styled from 'styled-components';
 
-const CostsFilter = (props) => {
+const CostsFilterBlock = styled.article`
+  color: white;
+  padding: 0 1rem;
+
+  section {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+  }
+
+  label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  select {
+    font: inherit;
+    padding: 0.5rem 3rem;
+    font-weight: bold;
+    border-radius: 6px;
+  }
+`;
+
+const CostsFilter = ({ year, onChangeYear }) => {
   const yearChangeHandler = (event) => {
-    props.onChangeYear(event.target.value);
+    onChangeYear(event.target.value);
   };
 
   return (
-    <div className="costs-filter">
-      <div className="costs-filter__control">
+    <CostsFilterBlock>
+      <section>
         <label>Выбор По Году</label>
-        <select value={props.year} onChange={yearChangeHandler}>
+        <select value={year} onChange={yearChangeHandler}>
           <option value="2023">2023</option>
           <option value="2022">2022</option>
           <option value="2021">2021</option>
-          <option value="2020">2020</option>
-          <option value="2019">2019</option>
         </select>
-      </div>
-    </div>
+      </section>
+    </CostsFilterBlock>
   );
 };
 

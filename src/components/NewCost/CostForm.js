@@ -1,8 +1,20 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
+import Button from '../UI/Button';
+import InputBlock from '../UI/Input';
 
-import './CostForm.css';
+const ActionsBlocks = styled.div`
+  text-align: left;
+`;
+const Controls = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  text-align: left;
+`;
 
-const CostForm = (props) => {
+const CostForm = ({ onSaveCostData, onClose }) => {
   const [description, setDescription] = useState('');
   const [amount, setAmount] = useState('');
   const [date, setDate] = useState('');
@@ -19,22 +31,22 @@ const CostForm = (props) => {
       date: new Date(date),
     };
     if (description && amount && date) {
-      props.onSaveCostData(costData);
+      onSaveCostData(costData);
       setDescription('');
       setAmount('');
       setDate('');
-      props.onClose();
+      onClose();
     }
   };
 
   return (
     <form onSubmit={submitHandler}>
-      <div className="new-cost__controls">
-        <div className="new-cost__control">
+      <Controls>
+        <InputBlock>
           <label>Name</label>
           <input type="text" onChange={nameChangeHandler} value={description} />
-        </div>
-        <div className="new-cost__control">
+        </InputBlock>
+        <InputBlock>
           <label>Amount</label>
           <input
             type="number"
@@ -43,8 +55,8 @@ const CostForm = (props) => {
             onChange={amountChangeHandler}
             value={amount}
           />
-        </div>
-        <div className="new-cost__control">
+        </InputBlock>
+        <InputBlock>
           <label>Date</label>
           <input
             type="date"
@@ -53,14 +65,14 @@ const CostForm = (props) => {
             onChange={dateChangeHandler}
             value={date}
           />
-        </div>
-        <div className="new-cost__actions">
-          <button type="submit">Add Costs</button>
-          <button type="submit" onClick={props.onClose}>
+        </InputBlock>
+        <ActionsBlocks>
+          <Button type="submit">Add Costs</Button>
+          <Button type="submit" onClick={onClose}>
             Close Costs
-          </button>
-        </div>
-      </div>
+          </Button>
+        </ActionsBlocks>
+      </Controls>
     </form>
   );
 };

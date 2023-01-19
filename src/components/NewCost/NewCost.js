@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 
 import CostForm from './CostForm';
 
-import './NewCost.css';
+import Button from '../UI/Button';
+import Block from '../UI/Block';
+import background from '../../img/banknotes.jpg';
 
-const NewCost = (props) => {
+const NewCost = ({ onAddCost }) => {
   const [isFormVisible, setIsFormVisible] = useState(false);
 
   const saveCostDataHandler = (inputCostData) => {
@@ -12,7 +14,7 @@ const NewCost = (props) => {
       ...inputCostData,
       id: Math.random().toString(),
     };
-    props.onAddCost(costData);
+    onAddCost(costData);
   };
 
   const openFormHandler = () => {
@@ -22,9 +24,15 @@ const NewCost = (props) => {
     setIsFormVisible(false);
   };
   return (
-    <div className="new-cost">
+    <Block
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundSize: 'contain',
+        backgroundPosition: 'center',
+      }}
+    >
       {!isFormVisible && (
-        <button onClick={openFormHandler}>Add a new expense</button>
+        <Button onClick={openFormHandler}>Add a new expense</Button>
       )}
       {isFormVisible && (
         <CostForm
@@ -32,7 +40,7 @@ const NewCost = (props) => {
           onClose={closeFormHandler}
         />
       )}
-    </div>
+    </Block>
   );
 };
 
