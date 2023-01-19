@@ -23,6 +23,24 @@ const App = () => {
       description: 'Jeans',
       amount: '49.99',
     },
+    {
+      id: 'c4',
+      date: new Date(2023, 3, 6),
+      description: 'Laptop',
+      amount: '700.99',
+    },
+    {
+      id: 'c5',
+      date: new Date(2023, 2, 23),
+      description: 'Snickers',
+      amount: '149.99',
+    },
+    {
+      id: 'c6',
+      date: new Date(2023, 4, 1),
+      description: 'Presents',
+      amount: '400',
+    },
   ];
 
   const [costs, setCosts] = useState(INITIAL_COSTS);

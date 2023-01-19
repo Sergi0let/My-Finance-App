@@ -8,7 +8,7 @@ const CostItemLi = styled.li`
   align-items: center;
   padding: 0.5rem;
   margin: 1rem 0;
-  background-color: #bd8025;
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.25);
 
@@ -27,14 +27,14 @@ const CostItemLi = styled.li`
     font-size: 1rem;
     flex: 1;
     margin: 0 1rem;
-    color: #fefae1;
+    color: tomato;
   }
 
   p {
     font-size: 1rem;
     font-weight: bold;
     color: #fefae1;
-    background-color: #2a5b84;
+    background-color: tomato;
     border: 1px solid white;
     padding: 0.5rem;
     border-radius: 12px;
