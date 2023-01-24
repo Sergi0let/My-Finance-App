@@ -42,30 +42,25 @@ const CostForm = ({ onSaveCostData, onClose }) => {
   return (
     <form onSubmit={submitHandler}>
       <Controls>
-        <InputBlock isInputValid>
-          <label>Name</label>
-          <input type="text" onChange={nameChangeHandler} value={description} />
-        </InputBlock>
-        <InputBlock isInputValid>
-          <label>Amount</label>
-          <input
-            type="number"
-            min="0.01"
-            step="0.01"
-            onChange={amountChangeHandler}
-            value={amount}
-          />
-        </InputBlock>
-        <InputBlock isInputValid>
-          <label>Date</label>
-          <input
-            type="date"
-            min="2022-01-01"
-            step="2023-12-31"
-            onChange={dateChangeHandler}
-            value={date}
-          />
-        </InputBlock>
+        <InputBlock
+          type="text"
+          label="Name"
+          onChange={nameChangeHandler}
+          value={description}
+        />
+        <InputBlock
+          type="number"
+          label="Amount"
+          onChange={amountChangeHandler}
+          value={amount}
+        />
+        <InputBlock
+          type="date"
+          label="Date"
+          onChange={dateChangeHandler}
+          value={date}
+        />
+
         <ActionsBlocks>
           <Button type="submit">Add Costs</Button>
           <Button type="submit" onClick={onClose}>
