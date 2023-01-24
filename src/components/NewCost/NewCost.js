@@ -6,6 +6,16 @@ import Button from '../UI/Button';
 import Block from '../UI/Block';
 import background from '../../img/banknotes.jpg';
 
+import styled from 'styled-components';
+
+const Controls = styled.div`
+  position: relative;
+  & :last-child {
+    position: absolute;
+    right: 0;
+  }
+`;
+
 const NewCost = ({ onAddCost }) => {
   const [isFormVisible, setIsFormVisible] = useState(false);
 
@@ -32,7 +42,10 @@ const NewCost = ({ onAddCost }) => {
       }}
     >
       {!isFormVisible && (
-        <Button onClick={openFormHandler}>Add a new expense</Button>
+        <Controls>
+          <Button onClick={openFormHandler}>Add a new expense</Button>
+          <Button onClick={openFormHandler}>Logout</Button>
+        </Controls>
       )}
       {isFormVisible && (
         <CostForm

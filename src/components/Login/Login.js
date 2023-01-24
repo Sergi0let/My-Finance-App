@@ -55,9 +55,7 @@ const formReducer = (state, action) => {
   }
 };
 
-const Login = (props) => {
-  const [formIsValid, setFormIsValid] = useState(false);
-
+const Login = ({ onLoggIn }) => {
   const [formState, dispatchFormState] = useReducer(formReducer, {
     emailInput: '',
     passInput: '',
@@ -65,10 +63,10 @@ const Login = (props) => {
     isPassValid: undefined,
   });
 
-  const { isEmailValid, isPassValid } = formState;
+  const [formIsValid, setFormIsValid] = useState(false);
+  const { isEmailValid, isPassValid, emailInput, passInput } = formState;
 
   useEffect(() => {
-    console.log('useEfect');
     setFormIsValid(isEmailValid && isPassValid);
   }, [isEmailValid, isPassValid]);
 
@@ -93,7 +91,7 @@ const Login = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     console.log('sumtin');
-    props.onLoggIn();
+    onLoggIn();
   };
 
   return (
@@ -106,19 +104,19 @@ const Login = (props) => {
     >
       <LoginBlock onSubmit={submitHandler}>
         <InputBlock
-          isValid={formState.isEmailValid}
+          isValid={isEmailValid}
           label="Email"
           onChange={nameChangeHandler}
-          value={formState.emailInput}
+          value={emailInput}
           onBlur={emailIsValid}
         />
         <InputBlock
-          isValid={formState.isPassValid}
+          isValid={isPassValid}
           id="password"
           label="Password"
           type="password"
           onChange={passChangeHandler}
-          value={formState.passInput}
+          value={passInput}
           onBlur={passIsValid}
         />
         <Button type="submit" disabled={!formIsValid}>

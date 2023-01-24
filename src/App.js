@@ -31,22 +31,20 @@ const App = () => {
     setCosts(() => [cost, ...costs]);
   };
 
-  return (
-    <div>
-      {!isLogginIn ? (
-        <Login
-          isLogginIn={isLogginIn}
-          onLoggIn={logInHandler}
-          onLogOut={logOutHandler}
-        />
-      ) : (
-        <>
-          <NewCost onAddCost={addCostHandler} />
-          <Costs costs={costs} />
-        </>
-      )}
-    </div>
+  const appContent = isLogginIn ? (
+    <>
+      <NewCost onAddCost={addCostHandler} />
+      <Costs costs={costs} />
+    </>
+  ) : (
+    <Login
+      isLogginIn={isLogginIn}
+      onLoggIn={logInHandler}
+      onLogOut={logOutHandler}
+    />
   );
+
+  return appContent;
 };
 
 export default App;
