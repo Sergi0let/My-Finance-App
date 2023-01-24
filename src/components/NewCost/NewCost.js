@@ -9,10 +9,15 @@ import background from '../../img/banknotes.jpg';
 import styled from 'styled-components';
 
 const Controls = styled.div`
-  position: relative;
   & :last-child {
-    position: absolute;
-    right: 0;
+    padding: 0.5rem 0.5rem;
+  }
+  @media (min-width: 430px) {
+    position: relative;
+    & :last-child {
+      position: absolute;
+      right: 0;
+    }
   }
 `;
 

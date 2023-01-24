@@ -17,5 +17,8 @@ const Button = styled.button`
     background-color: transparent;
     color: tomato;
   }
+  @media (max-width: 430px) {
+    padding: 0.5rem 0.5rem;
+  } ;
 `;
 export default Button;
