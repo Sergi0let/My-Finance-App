@@ -33,7 +33,7 @@ const App = () => {
 
   const appContent = isLogginIn ? (
     <>
-      <NewCost onAddCost={addCostHandler} />
+      <NewCost onAddCost={addCostHandler} onlogOut={logOutHandler} />
       <Costs costs={costs} />
     </>
   ) : (

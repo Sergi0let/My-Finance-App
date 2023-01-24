@@ -11,9 +11,7 @@ const LoginBlock = styled.form`
   max-width: 40rem;
   margin: 3rem auto;
   padding: 3rem;
-
   text-align: center;
-
   button {
     margin-top: 1em;
   }
@@ -119,7 +117,11 @@ const Login = ({ onLoggIn }) => {
           value={passInput}
           onBlur={passIsValid}
         />
-        <Button type="submit" disabled={!formIsValid}>
+        <Button
+          style={!formIsValid ? { background: 'transparent' } : null}
+          type="submit"
+          disabled={!formIsValid}
+        >
           Submit
         </Button>
       </LoginBlock>

@@ -16,7 +16,7 @@ const Controls = styled.div`
   }
 `;
 
-const NewCost = ({ onAddCost }) => {
+const NewCost = ({ onAddCost, onlogOut }) => {
   const [isFormVisible, setIsFormVisible] = useState(false);
 
   const saveCostDataHandler = (inputCostData) => {
@@ -33,6 +33,7 @@ const NewCost = ({ onAddCost }) => {
   const closeFormHandler = () => {
     setIsFormVisible(false);
   };
+
   return (
     <Block
       style={{
@@ -44,7 +45,7 @@ const NewCost = ({ onAddCost }) => {
       {!isFormVisible && (
         <Controls>
           <Button onClick={openFormHandler}>Add a new expense</Button>
-          <Button onClick={openFormHandler}>Logout</Button>
+          <Button onClick={() => onlogOut()}>Logout</Button>
         </Controls>
       )}
       {isFormVisible && (
