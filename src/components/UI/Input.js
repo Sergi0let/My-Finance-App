@@ -22,13 +22,26 @@ const InputBlockStyled = styled.div`
 
     &:focus {
       color: tomato;
+      outline: none;
+      border-color: #0649a0;
+      background: #94bcf0;
     }
+  }
+  .invalid {
+    border-color: red;
+    background: #dfc1c1;
   }
 `;
 
 const InputBlock = (props) => {
   const textInput = (
-    <input type={props.type} onChange={props.onChange} value={props.value} />
+    <input
+      className={`${props.isValid === false ? 'invalid' : ''}`}
+      type={props.type}
+      onChange={props.onChange}
+      value={props.value}
+      onBlur={props.onBlur}
+    />
   );
   const amountInput = (
     <input
@@ -48,6 +61,16 @@ const InputBlock = (props) => {
       value={props.value}
     />
   );
+  const passwordInput = (
+    <input
+      className={`${props.isValid === false ? 'invalid' : ''}`}
+      id={props.id}
+      type={props.type}
+      onChange={props.onChange}
+      value={props.value}
+      onBlur={props.onBlur}
+    />
+  );
   let inputType = textInput;
 
   return (
@@ -57,6 +80,8 @@ const InputBlock = (props) => {
         ? (inputType = amountInput)
         : props.type === 'date'
         ? (inputType = dateInput)
+        : props.type === 'password'
+        ? (inputType = passwordInput)
         : inputType}
     </InputBlockStyled>
   );
