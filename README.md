@@ -12,7 +12,7 @@
 
 ##### Description
 
-Simply finance notebook, can input costs with date and title costs.
+Simply finance notebook app on React, used function components with different hooks⚓ (useState, useEffect, useReducer). Application can input costs with date and title costs.
 There is also a spending filter. You can follow you costs by month.
 
 I create👩🏿‍💻 this app for practice and fun🌈.
