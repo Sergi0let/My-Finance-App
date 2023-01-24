@@ -7,7 +7,7 @@ import InputBlock from '../UI/Input';
 import background from '../../img/dollar-banknotes-background.jpg';
 
 const LoginBlock = styled.form`
-  width: 90%;
+  /* width: 90%; */
   max-width: 40rem;
   margin: 3rem auto;
   padding: 3rem;

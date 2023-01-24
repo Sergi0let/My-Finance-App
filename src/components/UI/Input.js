@@ -16,10 +16,6 @@ const InputBlockStyled = styled.div`
     width: 20rem;
     max-width: 100%;
 
-    @media (max-width: 400px) {
-      width: 13rem;
-    }
-
     &:focus {
       color: tomato;
       outline: none;
