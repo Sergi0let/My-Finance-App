@@ -88,7 +88,6 @@ const Login = ({ onLoggIn }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log('sumtin');
     onLoggIn();
   };
 
@@ -102,20 +101,22 @@ const Login = ({ onLoggIn }) => {
     >
       <LoginBlock onSubmit={submitHandler}>
         <InputBlock
-          isValid={isEmailValid}
           label="Email"
-          onChange={nameChangeHandler}
-          value={emailInput}
-          onBlur={emailIsValid}
+          valid={isEmailValid}
+          input={{
+            onChange: nameChangeHandler,
+            value: emailInput,
+            onBlur: emailIsValid,
+          }}
         />
         <InputBlock
-          isValid={isPassValid}
-          id="password"
           label="Password"
-          type="password"
-          onChange={passChangeHandler}
-          value={passInput}
-          onBlur={passIsValid}
+          valid={isPassValid}
+          input={{
+            onChange: passChangeHandler,
+            value: passInput,
+            onBlur: passIsValid,
+          }}
         />
         <Button
           style={!formIsValid ? { background: 'transparent' } : null}

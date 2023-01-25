@@ -43,12 +43,38 @@ const CostForm = ({ onSaveCostData, onClose }) => {
     <form onSubmit={submitHandler}>
       <Controls>
         <InputBlock
-          type="text"
+          // type="text"
+          // label="Name"
+          // onChange={nameChangeHandler}
+          // value={description}
           label="Name"
-          onChange={nameChangeHandler}
-          value={description}
+          input={{
+            type: 'text',
+            value: description,
+            onChange: nameChangeHandler,
+          }}
         />
         <InputBlock
+          label="Name"
+          input={{
+            min: '0.01',
+            step: '0.01',
+            type: 'number',
+            value: amount,
+            onChange: amountChangeHandler,
+          }}
+        />
+        <InputBlock
+          label="Date"
+          input={{
+            min: '2022-01-01',
+            step: '2023-12-31',
+            type: 'date',
+            value: date,
+            onChange: dateChangeHandler,
+          }}
+        />
+        {/* <InputBlock
           type="number"
           label="Amount"
           onChange={amountChangeHandler}
@@ -59,7 +85,7 @@ const CostForm = ({ onSaveCostData, onClose }) => {
           label="Date"
           onChange={dateChangeHandler}
           value={date}
-        />
+        /> */}
 
         <ActionsBlocks>
           <Button type="submit">Add Costs</Button>

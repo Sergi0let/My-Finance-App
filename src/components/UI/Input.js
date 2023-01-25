@@ -30,56 +30,15 @@ const InputBlockStyled = styled.div`
 `;
 
 const InputBlock = (props) => {
-  const textInput = (
-    <input
-      className={`${props.isValid === false ? 'invalid' : ''}`}
-      type={props.type}
-      onChange={props.onChange}
-      value={props.value}
-      onBlur={props.onBlur}
-    />
-  );
-  const amountInput = (
-    <input
-      min="0.01"
-      step="0.01"
-      type={props.type}
-      onChange={props.onChange}
-      value={props.value}
-    />
-  );
-  const dateInput = (
-    <input
-      min="2022-01-01"
-      step="2023-12-31"
-      type={props.type}
-      onChange={props.onChange}
-      value={props.value}
-    />
-  );
-  const passwordInput = (
-    <input
-      className={`${props.isValid === false ? 'invalid' : ''}`}
-      id={props.id}
-      type={props.type}
-      onChange={props.onChange}
-      value={props.value}
-      onBlur={props.onBlur}
-    />
-  );
-  let inputType = textInput;
-
   return (
     <InputBlockStyled>
       <label>{props.label}</label>
-      {props.type === 'number'
-        ? (inputType = amountInput)
-        : props.type === 'date'
-        ? (inputType = dateInput)
-        : props.type === 'password'
-        ? (inputType = passwordInput)
-        : inputType}
+      <input
+        {...props.input}
+        className={`${props.valid === false ? 'invalid' : ''}`}
+      />
     </InputBlockStyled>
   );
 };
+
 export default InputBlock;
